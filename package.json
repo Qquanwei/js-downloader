@@ -1,0 +1,29 @@
+{
+  "name": "js-downloader",
+  "version": "0.0.1",
+  "description": "Js-Download",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Qquanwei/js-downloader.git"
+  },
+  "keywords": [
+    "js",
+    "download",
+    "pause",
+    "pregress",
+    "resume",
+    "stream",
+    "downloader"
+  ],
+  "author": "Qquanwei",
+  "license": "ISC",
+  "dependencies": {
+    "ramda": "^0.22.1",
+    "request": "^2.74.0",
+    "request-progress": "^2.0.1"
+  }
+}
