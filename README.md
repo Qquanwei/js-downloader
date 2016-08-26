@@ -8,7 +8,7 @@ Features:
 
 ## Install
 
-* npm install js-download --save
+* npm install js-downloader --save
 
 
 ## Usage
@@ -16,7 +16,7 @@ Features:
 ```
 "use strict"
 let fs = require('fs');
-let download = require('./js-downloader/index.js');
+let download = require('js-downloader');
 
 /*
  * defaultoption ={
