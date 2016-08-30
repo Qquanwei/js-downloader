@@ -44,10 +44,11 @@ download('http://localhost:8000/setup.exe',{}).then(function(req){
     .on('end',()=>console.log('done'))
     .on('error',console.log)
     .on('progress',console.log)
+    .on('abort',()=>console.log('abort'))
     .pipe(stream);
 
   setTimeout(function(){
-    stream.close(); // will be pause
+    req.request.abort(); // will be abort
   },10000);
 
 }).catch(function(e){
