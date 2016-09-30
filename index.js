@@ -87,8 +87,7 @@ function download(downloadurl, option) {
     .then(function(option){
       return {
         request: progress(request.get(option)),
-        path: outputfilename,
-        resume: option.resume,
+        stream: fs.createWrite(outputfilename, { flags: option.resume ?'a':'w'})
       }
     })
 }

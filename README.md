@@ -33,12 +33,11 @@ download('http://localhost:8000/setup.exe',{}).then(function(req){
   /*
    * req = {
    *   request,
-   *   path,   //download fullpath,will be write'
-   *   resume, //if download server support resume and option.resume=true, resule is true,otherwise false
+   *   stream,   //download fullpath,will be write'
    * }
     * */
 
-  let stream = fs.createWriteStream(req.path,{flags:req.resume?'a':'w'});
+  let stream = req.stream;
 
   req.request
     .on('end',()=>console.log('done'))

@@ -1,6 +1,6 @@
 {
   "name": "js-downloader",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Js-Download",
   "main": "index.js",
   "scripts": {
