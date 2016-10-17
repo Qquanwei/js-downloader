@@ -54,7 +54,9 @@ function download(downloadurl, option) {
           resume:'accept-ranges' in req.headers,
           contentLength: req.headers['content-length'],
         });
-    }).on('checkExpectation',reject).end();
+    }).on('checkExpectation',reject)
+      .on('error',reject)
+      .end();
   });
 
   const blockSize = new Promise(function(resolve,reject){
@@ -83,8 +85,7 @@ function download(downloadurl, option) {
         option.headers['Range'] = `bytes=${bytes}-${contentLength}`;
       }
       return option;
-    })
-    .then(function(option){
+    }).then(function(option){
       return {
         request: progress(request.get(option)),
         stream: fs.createWriteStream(outputfilename, { flags: option.resume ?'a':'w',autoClose : true})
