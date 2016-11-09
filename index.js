@@ -10,6 +10,9 @@ const R = require('ramda');
 const fs = require('fs');
 const path = require('path');
 
+// fix bug on Windows
+http.globalAgent.keepAlive = true;
+https.globalAgent.keepAlive = true;
 
 /*
  * defaultoption ={
